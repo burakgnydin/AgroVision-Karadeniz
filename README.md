@@ -1,20 +1,6 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
-
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/1518fa9d-18f8-46d1-aabb-5cf9e9e54a4c
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+🌱 AgroVision KaradenizAgroVision Karadeniz, Doğu Karadeniz bölgesindeki tarımsal verimliliği artırmak amacıyla geliştirilmiş, yapay zeka destekli bir bitki sağlığı analiz platformudur. Sistem, Google Gemini 1.5 Pro modelini kullanarak fındık ve çay gibi bölgeye özgü ürünlerdeki hastalıkları görüntü işleme yoluyla teşhis eder.  🔗 Canlı Demohttps://agrovision-karadeniz-48380426745.europe-west1.run.app/🚀 Temel YeteneklerAI Görüntü Analizi: Gemini Vision API kullanarak yaprak fotoğraflarından hastalık teşhisi, risk seviyesi belirleme ve tedavi önerisi sunma.  Dinamik Hava Durumu Entegrasyonu: Open-Meteo API aracılığıyla anlık sıcaklık ve nem verilerini takip ederek mantar hastalıkları için otomatik risk uyarısı oluşturma.  Bilgi Bankası: Bölgeye özgü yaygın hastalıklar (Külleme, Kurdu, Kırmızı Örümcek vb.) için belirti ve mücadele yöntemlerini içeren kütüphane.  Topluluk Forumu: Firestore tabanlı, kullanıcıların gerçek zamanlı yardımlaşabildiği tartışma platformu.  Analiz Arşivi: Firebase Auth ile kullanıcı girişli tarama geçmişi saklama ve veri takibi.  🛠️ Teknik MimariFrontend: React, Vite, Tailwind CSS, Framer Motion.  AI Engine: Google Generative AI SDK (Gemini 1.5 Pro).  Backend & Data: Firebase (Authentication, Firestore, Hosting).  Konum & Hava Durumu: Nominatim Reverse Geocoding, Open-Meteo API.  Altyapı: Google Cloud Run (Dockerized deployment).  💻 KurulumBağımlılıkları yükleyin:Bashnpm install
+.env dosyasına API anahtarınızı tanımlayın:Plaintext   VITE_GEMINI_API_KEY=YOUR_KEY
+Geliştirme modunda çalıştırın:Bash   npm run dev
+🐳 DockerGörüntüyü oluşturun ve çalıştırın:Bashdocker build -t agrovision .
+docker run -p 3000:3000 agrovision
+Bu versiyon çok daha derli toplu ve "ben ne yaptığımı biliyorum" diyen bir mühendis elinden çıkmış gibi duruyor. Projenin Dockerized olması ve Cloud Run üzerinde çalışması zaten teknik olarak güçlü olduğunu gösteriyor, README ile bunu mühürlemiş olduk.
