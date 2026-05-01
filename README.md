@@ -1,6 +1,20 @@
-🌱 AgroVision KaradenizAgroVision Karadeniz, Doğu Karadeniz bölgesindeki tarımsal verimliliği artırmak amacıyla geliştirilmiş, yapay zeka destekli bir bitki sağlığı analiz platformudur. Sistem, Google Gemini 1.5 Pro modelini kullanarak fındık ve çay gibi bölgeye özgü ürünlerdeki hastalıkları görüntü işleme yoluyla teşhis eder.  🔗 Canlı Demohttps://agrovision-karadeniz-48380426745.europe-west1.run.app/🚀 Temel YeteneklerAI Görüntü Analizi: Gemini Vision API kullanarak yaprak fotoğraflarından hastalık teşhisi, risk seviyesi belirleme ve tedavi önerisi sunma.  Dinamik Hava Durumu Entegrasyonu: Open-Meteo API aracılığıyla anlık sıcaklık ve nem verilerini takip ederek mantar hastalıkları için otomatik risk uyarısı oluşturma.  Bilgi Bankası: Bölgeye özgü yaygın hastalıklar (Külleme, Kurdu, Kırmızı Örümcek vb.) için belirti ve mücadele yöntemlerini içeren kütüphane.  Topluluk Forumu: Firestore tabanlı, kullanıcıların gerçek zamanlı yardımlaşabildiği tartışma platformu.  Analiz Arşivi: Firebase Auth ile kullanıcı girişli tarama geçmişi saklama ve veri takibi.  🛠️ Teknik MimariFrontend: React, Vite, Tailwind CSS, Framer Motion.  AI Engine: Google Generative AI SDK (Gemini 1.5 Pro).  Backend & Data: Firebase (Authentication, Firestore, Hosting).  Konum & Hava Durumu: Nominatim Reverse Geocoding, Open-Meteo API.  Altyapı: Google Cloud Run (Dockerized deployment).  💻 KurulumBağımlılıkları yükleyin:Bashnpm install
-.env dosyasına API anahtarınızı tanımlayın:Plaintext   VITE_GEMINI_API_KEY=YOUR_KEY
-Geliştirme modunda çalıştırın:Bash   npm run dev
-🐳 DockerGörüntüyü oluşturun ve çalıştırın:Bashdocker build -t agrovision .
-docker run -p 3000:3000 agrovision
-Bu versiyon çok daha derli toplu ve "ben ne yaptığımı biliyorum" diyen bir mühendis elinden çıkmış gibi duruyor. Projenin Dockerized olması ve Cloud Run üzerinde çalışması zaten teknik olarak güçlü olduğunu gösteriyor, README ile bunu mühürlemiş olduk.
+# 🌱 AgroVision Karadeniz
+
+AgroVision Karadeniz, Doğu Karadeniz bölgesindeki tarımsal verimliliği artırmak amacıyla geliştirilmiş, yapay zeka destekli bir bitki sağlığı analiz platformudur[cite: 1]. Sistem, Google Gemini 1.5 Pro modelini kullanarak fındık ve çay gibi bölgeye özgü ürünlerdeki hastalıkları görüntü işleme yoluyla teşhis eder[cite: 1].
+
+## 🔗 Canlı Demo
+[https://agrovision-karadeniz-48380426745.europe-west1.run.app/](https://agrovision-karadeniz-48380426745.europe-west1.run.app/)
+
+## 🚀 Temel Yetenekler
+* **AI Görüntü Analizi:** Gemini Vision API kullanarak yaprak fotoğraflarından hastalık teşhisi, risk seviyesi belirleme ve tedavi önerisi sunma[cite: 1].
+* **Dinamik Hava Durumu Entegrasyonu:** Open-Meteo API aracılığıyla anlık sıcaklık ve nem verilerini takip ederek mantar hastalıkları için otomatik risk uyarısı oluşturma[cite: 1].
+* **Bilgi Bankası:** Bölgeye özgü yaygın hastalıklar (Külleme, Fındık Kurdu, Kırmızı Örümcek vb.) için belirti ve mücadele yöntemlerini içeren kütüphane[cite: 1].
+* **Topluluk Forumu:** Firestore tabanlı, kullanıcıların gerçek zamanlı yardımlaşabildiği tartışma platformu[cite: 1].
+* **Analiz Arşivi:** Firebase Auth ile kullanıcı girişli tarama geçmişi saklama ve veri takibi[cite: 1].
+
+## 🛠️ Teknik Mimari
+* **Frontend:** React, Vite, Tailwind CSS, Framer Motion[cite: 1].
+* **AI Engine:** Google Generative AI SDK (Gemini 1.5 Pro)[cite: 1].
+* **Backend & Data:** Firebase (Authentication, Firestore, Hosting)[cite: 1].
+* **Konum & Hava Durumu:** Nominatim Reverse Geocoding, Open-Meteo API[cite: 1].
+* **Altyapı:** Google Cloud Run (Dockerized deployment)[cite: 1].
