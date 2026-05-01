@@ -1,0 +1,12 @@
+{
+  "name": "AgroVision Karadeniz",
+  "description": "Karadeniz Bölgesi fındık ve çay üreticileri için yapay zeka destekli hastalık analizörü ve topluluk forumu.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "vision",
+    "realtime"
+  ]
+}

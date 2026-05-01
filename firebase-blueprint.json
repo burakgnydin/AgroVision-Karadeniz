@@ -1,0 +1,82 @@
+{
+  "entities": {
+    "User": {
+      "title": "Üretici Profili",
+      "description": "Uygulama kullanıcılarının profil bilgileri.",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "location": { "type": "string" },
+        "cropType": { "type": "string", "enum": ["Fındık", "Çay", "Her İkisi"] },
+        "role": { "type": "string", "enum": ["Üretici", "Uzman", "Ziraat Mühendisi"] }
+      },
+      "required": ["displayName"]
+    },
+    "ForumPost": {
+      "title": "Forum Yazısı",
+      "description": "Kullanıcıların soru ve gözlemlerini paylaştığı yazılar.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "authorId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "category": { "type": "string", "enum": ["Hastalık", "Gübreleme", "Hasat", "Genel"] },
+        "crop": { "type": "string", "enum": ["Fındık", "Çay", "Diğer"] },
+        "imageUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "likesCount": { "type": "number" }
+      },
+      "required": ["title", "content", "authorId", "category"]
+    },
+    "Comment": {
+      "title": "Yorum",
+      "description": "Forum yazılarına gelen cevaplar.",
+      "type": "object",
+      "properties": {
+        "postId": { "type": "string" },
+        "authorId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "content": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["postId", "authorId", "content"]
+    },
+    "AnalysisResult": {
+      "title": "Analiz Kaydı",
+      "description": "Yapay zeka tarafından yapılan yaprak analizi sonuçları.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "diseaseName": { "type": "string" },
+        "scientificName": { "type": "string" },
+        "confidence": { "type": "number" },
+        "description": { "type": "string" },
+        "proactiveAdvice": { "type": "string" },
+        "severity": { "type": "number" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "imageUrl", "diseaseName"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Kullanıcı profilleri."
+    },
+    "/posts/{postId}": {
+      "schema": "ForumPost",
+      "description": "Forumdaki ana başlıklar."
+    },
+    "/posts/{postId}/comments/{commentId}": {
+      "schema": "Comment",
+      "description": "Yazılara verilen cevaplar."
+    },
+    "/analyses/{analysisId}": {
+      "schema": "AnalysisResult",
+      "description": "Geçmiş analiz kayıtları."
+    }
+  }
+}
